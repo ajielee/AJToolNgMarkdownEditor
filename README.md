@@ -14,7 +14,7 @@ C'est un petit outil que j'ai créé pour m'entraîner en AngularJS. Il est un �
 ## Acknowledgments
 Based on [angular-marked](https://github.com/Hypercubed/angular-marked) by [@Hypercubed](https://github.com/Hypercubed)
 
-In fact, this is a core function of my own blog, which I'm still programming. Thanks [@Hypercubed](https://github.com/Hypercubed), without his powerful library and his help, I can't do it in such a short time.
+In fact, this is a core function of my own blog, which I'm still programming. Thanks [@Hypercubed](https://github.com/Hypercubed), without his powerful library or his help, I can't do it in such a short time.
 
 ## TODO list
 1. Adds tab option, makes it more useful for iPhone user.
