@@ -1,0 +1,31 @@
+{
+  "name": "AJToolNgMarkdownEditor",
+  "version": "0.0.1",
+  "authors": [
+    "Leo <ajie.lee@gmail.com>"
+  ],
+  "description": "packages for my little project \"AJToolNgMarkdownEditor\".",
+  "keywords": [
+    "angular",
+    "markdown",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "homepage": "http://xiaojieli.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-marked": "~0.0.21",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "marked": "~0.3.3"
+  },
+  "moduleType": [
+    "globals"
+  ]
+}

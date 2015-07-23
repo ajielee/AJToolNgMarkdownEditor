@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" ng-app="markdownEditor">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- disable zooming capabilities on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="One page markdown editor">
+    <meta name="keywords" content="markdown,angularjs,bootstrap,markdown editor">
+    <meta name="author" content="Xiaojie LI">
+    <title>Léo's tool - Online Markdown Editor</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/ico" href="img/favicon.ico"/>
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- css for highlight.js -->
+    <link rel="stylesheet" href="bower_components/highlightjs/styles/atelier-dune.dark.css">
+    <!-- app.min.css -->
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+    <!-- nav bar start -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-brand-img" href="http://xiaojieli.com" title="Léo's PlayGround">
+                    <img alt="Brand" src="img/selfie-200x200.jpg">
+                </a>
+                <span>»</span>
+                <a class="navbar-brand navbar-brand-txt" href="#" title="Léo's tool - Online Markdown Editor">
+                    Léo's tool - Online Markdown Editor
+                </a>
+            </div>
+        </div>
+        <!-- Fork me banner start -->
+        <a href="https://github.com/ajielee"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/fork-me-banner.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+    </nav>
+
+    <!-- main-div start -->
+    <div class="container-fluid main-div" ng-controller="mainCtrl">
+        <div class="row">
+            <div class="col-sm-6">
+                <h4 class="text-center">Write your markdown code:</h4>
+                <div class="well">
+                    <textarea ng-model="markdownSource"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h4 class="text-center">Then your content will show up here:</h4>
+                <!--<div class="well" ng-bind-html="markdownDisplay"></div>-->
+                <div class="well md-display" marked="markdownSource"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.min.js"></script>
+    <!-- AngularJS -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <!-- marked -->
+    <script src="bower_components/marked/marked.min.js"></script>
+    <!-- angular-marked -->
+    <script src="bower_components/angular-marked/angular-marked.min.js"></script>
+    <!-- highlight.js -->
+    <script src="bower_components/highlightjs/highlight.pack.js"></script>
+    <!-- app.min.js -->
+    <script src="js/app.min.js"></script>
+</body>

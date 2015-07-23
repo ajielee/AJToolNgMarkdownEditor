@@ -1,0 +1,112 @@
+// palette
+$dark-primary-color: #455A64;
+$default-primary-color: #607D8B;
+$light-primary-color: #CFD8DC;
+$text-primary-color: #FFFFFF;
+$accent-color: #FFC107;
+$primary-text-color: #212121;
+$secondary-text-color: #727272;
+$divider-color: #B6B6B6;
+
+@mixin border-radius-generator($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+body {
+    background-color: $light-primary-color;
+
+    .navbar {
+        background-color: $dark-primary-color;
+
+        .navbar-header {
+            width: 500px;
+
+            span {
+                position: absolute;
+                top: -10px;
+                left: 60px;
+                color: $light-primary-color;
+                font-size: 45px;
+            }
+
+            .navbar-brand {
+                float: none;
+                height: 50px;
+                line-height: 50px;
+                padding: 0;
+                color: $light-primary-color;
+
+                &.navbar-brand-img {
+                    width: 40px;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border: 2px solid $light-primary-color;
+                        margin-left: 10px;
+                        display: inline-block;
+                        @include border-radius-generator(5px);
+                    }
+
+                }
+
+                &.navbar-brand-txt {
+                    width: 400px;
+                    margin-left: 35px;
+                }
+
+                &:hover, &:focus, &:active {
+                    color: $accent-color;
+
+                    img {
+                        border-color: $accent-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-div {
+        margin-top: 50px;
+        padding-top: 20px;
+
+        h4 {
+            color: $dark-primary-color;
+        }
+
+        .well {
+            min-height: 660px;
+            background-color: $text-primary-color;
+            border-color: $dark-primary-color;
+            @include border-radius-generator(20px);
+
+            textarea {
+                outline: none;
+                resize: none;
+                width: 100%;
+                height: 615px;
+                line-height: 20px;
+                padding: 10px;
+                font-size: 16px;
+                color: $dark-primary-color;
+                background-color: $light-primary-color;
+                border-color: $dark-primary-color;
+                @include border-radius-generator(15px);
+
+            }
+
+            &.md-display {
+
+            }
+
+        }
+
+    }
+}
+
+
+
+
