@@ -28,31 +28,38 @@
                 </a>
                 <span>»</span>
                 <a class="navbar-brand navbar-brand-txt" href="https://github.com/ajielee/AJToolNgMarkdownEditor" title="Léo's tools - Online Markdown Editor">
-                    Léo's tools - Online Markdown Editor
+                    AJToolNgMarkdownEditor
                 </a>
             </div>
         </div>
         <!-- Fork me banner start -->
-        <a href="https://github.com/ajielee/AJToolNgMarkdownEditor"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/fork-me-banner.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+        <a class="hidden-xs" href="https://github.com/ajielee/AJToolNgMarkdownEditor"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/fork-me-banner.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+        <a class="hidden-lg hidden-md hidden-sm" href="https://github.com/ajielee/AJToolNgMarkdownEditor"><img style="position: absolute; top: 0; right: 0; border: 0; width: 80px; height: 80px;" src="img/fork-me-banner.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
     </nav>
 
     <!-- main-div start -->
     <div class="container-fluid main-div" ng-controller="mainCtrl">
         <div class="row">
-            <div class="col-sm-6">
-                <h4 class="text-center">Write your markdown code:</h4>
-                <div class="well">
-                    <textarea ng-model="markdownSource"></textarea>
+            <div class="col-md-6">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ng-click="editorOn()" ng-class="{true:'active'}[showEditor]"><a href="#">Where you write</a></li>
+                    <li role="presentation" ng-hide="showInTwoCol" ng-click="viewerOn()" ng-class="{true:'active'}[showViewer]"><a href="#">What you will see</a></li>
+                </ul>
+                <div class="content-div">
+                    <textarea ng-show="showEditor" ng-model="markdownSource"></textarea>
+                    <div class="markdown-div" ng-show="showViewer" marked="markdownSource"></div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <h4 class="text-center">Then your content will show up here:</h4>
-                <!--<div class="well" ng-bind-html="markdownDisplay"></div>-->
-                <div class="well md-display" marked="markdownSource"></div>
+            <div class="col-md-6 hidden-sm hidden-xs">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="active"><a href="#">What you will see</a></li>
+                </ul>
+                <div class="content-div">
+                    <div class="markdown-div" marked="markdownSource"></div>
+                </div>
             </div>
         </div>
     </div>
-
     <!-- jQuery -->
     <script src="bower_components/jquery/dist/jquery.min.min.js"></script>
     <!-- AngularJS -->

@@ -16,6 +16,7 @@ $divider-color: #B6B6B6;
 }
 
 body {
+    font-size: 16px;
     background-color: $light-primary-color;
 
     .navbar {
@@ -54,7 +55,7 @@ body {
                 }
 
                 &.navbar-brand-txt {
-                    width: 400px;
+                    //width: 800px;
                     margin-left: 35px;
                 }
 
@@ -71,39 +72,63 @@ body {
 
     .main-div {
         margin-top: 50px;
+        margin-bottom: 20px;
         padding-top: 20px;
 
-        h4 {
-            color: $dark-primary-color;
+        .nav-tabs {
+            margin-left: 20px;
+
+            li {
+
+                &.active {
+
+                    a {
+                        color: $accent-color;
+                        background-color: $text-primary-color;
+                        border-bottom-color: $text-primary-color;
+                    }
+
+                }
+
+
+                a {
+                    color: $default-primary-color;
+                    background-color: $divider-color;
+                    border-color: $dark-primary-color;
+
+                    &:hover, &:active, &:focus {
+                        color: $accent-color;
+                        border-top-color: $dark-primary-color;
+                        border-left-color: $dark-primary-color;
+                        border-right-color: $dark-primary-color;
+                    }
+                }
+            }
         }
 
-        .well {
-            min-height: 660px;
+        .content-div {
+            width: 100%;
+            margin-top: -1px;
+            padding: 10px;
+            min-height: 642px;
             background-color: $text-primary-color;
-            border-color: $dark-primary-color;
-            @include border-radius-generator(20px);
+            border: 1px solid $dark-primary-color;
+            @include border-radius-generator(5px);
 
             textarea {
                 outline: none;
                 resize: none;
                 width: 100%;
-                height: 615px;
+                min-height: 615px;
                 line-height: 20px;
-                padding: 10px;
-                font-size: 16px;
                 color: $dark-primary-color;
-                background-color: $light-primary-color;
-                border-color: $dark-primary-color;
-                @include border-radius-generator(15px);
-
+                border: none;
             }
 
-            &.md-display {
+            .markdown-div {
 
             }
-
         }
-
     }
 }
 
