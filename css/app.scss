@@ -80,14 +80,16 @@ body {
 
             li {
 
-                &.active {
+                &.small-tab {
+                    font-size: 12px;
+                }
 
+                &.active {
                     a {
                         color: $accent-color;
                         background-color: $text-primary-color;
                         border-bottom-color: $text-primary-color;
                     }
-
                 }
 
 
@@ -110,22 +112,25 @@ body {
             width: 100%;
             margin-top: -1px;
             padding: 10px;
-            min-height: 642px;
+            //min-height: 642px;
             background-color: $text-primary-color;
             border: 1px solid $dark-primary-color;
             @include border-radius-generator(5px);
 
-            textarea {
+            .text-div {
                 outline: none;
                 resize: none;
                 width: 100%;
-                min-height: 615px;
+                //min-height: 615px;
                 line-height: 20px;
                 color: $dark-primary-color;
                 border: none;
             }
 
             .markdown-div {
+                //min-height: 615px;
+                margin-bottom: 4px;
+
 
             }
         }

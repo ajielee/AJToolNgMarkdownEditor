@@ -4,6 +4,14 @@
  * Time: 22:51
  */
 
+ $('document').ready(function() {
+     // uses jquery-elastic to increase the height of textarea automatically
+     $('.text-div').elastic();
+     // resize divs
+     $('.content-div').css('min-height', $(window).height() - 130 );
+     $('.text-div').css('min-height', $(window).height() - 160 );
+ });
+
 var markdownEditor = angular.module('markdownEditor', ['hc.marked'])
  .config(['markedProvider', function(markedProvider) {
 
@@ -29,8 +37,6 @@ markdownEditor.controller('mainCtrl', ['$scope', 'marked', function($scope, mark
     $scope.showEditor = true;
     $scope.showViewer = false;
 
-    //$scope.showInTwoCol = false;
-
     (function() {
         // if window's width large than 992px or equal to 992px ('md' in Bootstrap)
         if (992 >= window.innerWidth) {
@@ -38,26 +44,32 @@ markdownEditor.controller('mainCtrl', ['$scope', 'marked', function($scope, mark
         } else {
             $scope.showInTwoCol = true;
         }
-        $('textarea').focus();
+        $('.text-div').focus();
     })();
 
 
     // sets default value for textarea
     $scope.markdownSource = '';
+
     // updates $scope.markdownDisplay if $scope.markdownSource changes
     $scope.$watch('markdownSource', function() {
         $scope.markdownDisplay = marked($scope.markdownSource);
     });
+
     $scope.editorOn = function() {
         $scope.showEditor = true;
         $scope.showViewer = false;
     }
+
     $scope.viewerOn = function() {
         $scope.showEditor = false;
         $scope.showViewer = true;
     }
 
     $(window).resize(function(){
+        // resize divs
+        $('.content-div').css('min-height', $(window).height() - 130 );
+        $('.text-div').css('min-height', $(window).height() - 160 );
         // if window's width large than 992px or equal to 992px ('md' in Bootstrap)
         if (992 >= window.innerWidth) {
             $scope.showInTwoCol = false;

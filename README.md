@@ -16,6 +16,14 @@ C'est un petit outil que j'ai créé pour m'entraîner en AngularJS. Il est un �
 ## Demo
 [http://xiaojieli.com/tools/AJToolNgMarkdownEditor](http://xiaojieli.com/tools/AJToolNgMarkdownEditor)
 
+## Screenshot
+
+* on smartphone:
+![iPhone Screenshot](http://i.imgur.com/v4bHYGn.png)
+
+* on Mac/PC:
+![Mac Screenshot](http://i.imgur.com/JXUjl5y.png)
+
 ## Acknowledgments
 Based on [angular-marked](https://github.com/Hypercubed/angular-marked) by [@Hypercubed](https://github.com/Hypercubed)
 
