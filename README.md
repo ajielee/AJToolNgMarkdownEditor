@@ -18,10 +18,12 @@ C'est un petit outil que j'ai créé pour m'entraîner en AngularJS. Il est un �
 
 ## Screenshot
 
-* on smartphone:
+* on smartphone:  
+
 ![iPhone Screenshot](http://i.imgur.com/v4bHYGn.png)
 
-* on Mac/PC:
+* on Mac/PC:  
+
 ![Mac Screenshot](http://i.imgur.com/JXUjl5y.png)
 
 ## Acknowledgments
