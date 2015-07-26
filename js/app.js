@@ -72,11 +72,15 @@ markdownEditor.controller('mainCtrl', ['$scope', 'marked', function($scope, mark
         $('.text-div').css('min-height', $(window).height() - 160 );
         // if window's width large than 992px or equal to 992px ('md' in Bootstrap)
         if (992 >= window.innerWidth) {
-            $scope.showInTwoCol = false;
-            $scope.showEditor = true;
-            $scope.showViewer = false;
+            if ($scope.showInTwoCol) {
+                $scope.showInTwoCol = false;
+                $scope.showEditor = true;
+                $scope.showViewer = false;
+            }
         } else {
-            $scope.showInTwoCol = true;
+            if (!$scope.showInTwoCol) {
+                $scope.showInTwoCol = true;
+            }
         }
         $scope.$apply();
     });
