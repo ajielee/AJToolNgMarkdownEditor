@@ -48,7 +48,7 @@
                     <li class="hidden-xs" role="presentation" ng-hide="showInTwoCol" ng-click="viewerOn()" ng-class="{true:'active'}[showViewer]"><a href="#">What you will see</a></li>
                 </ul>
                 <div class="content-div">
-                    <textarea class="text-div" ng-show="showEditor" ng-model="markdownSource"></textarea>
+                    <textarea class="text-div" ng-show="showEditor" ng-model="markdownSource" placeholder="Let's write something here..."></textarea>
                     <div class="markdown-div" ng-show="showViewer" marked="markdownSource"></div>
                 </div>
             </div>
