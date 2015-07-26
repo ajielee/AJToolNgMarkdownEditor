@@ -32,8 +32,13 @@ Based on [angular-marked](https://github.com/Hypercubed/angular-marked) by [@Hyp
 In fact, this is a core function of my own blog, which I'm still programming. Thanks [@Hypercubed](https://github.com/Hypercubed), without his powerful library or his help, I can't do it in such a short time.
 
 ## TODO list
-1. Adds tab option, makes it more useful for iPhone user.
+1. ~~Adds tab option, makes it more useful for iPhone user.~~
 2. Uses web storage to storage text while editing.
 3. Makes output function for saving text content or HTML code.
+
+## Update
+* 2015/07/26, v0.1.0: 
+	* Adds nav tab, when window's width less than 992px, shows only one tab.
+	* Adds "scroll to top" button. 
 
 

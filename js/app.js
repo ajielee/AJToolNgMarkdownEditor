@@ -4,14 +4,63 @@
  * Time: 22:51
  */
 
- $('document').ready(function() {
-     // uses jquery-elastic to increase the height of textarea automatically
-     $('.text-div').elastic();
-     // resize divs
-     $('.content-div').css('min-height', $(window).height() - 130 );
-     $('.text-div').css('min-height', $(window).height() - 160 );
- });
+/**
+ *  shows "#scrollToTopBtn"
+ */
+function showScrollToTop() {
+    if (!$('#scrollToTopBtn').hasClass('show-scroll-to-top-btn')) {
+        $('#scrollToTopBtn').addClass('show-scroll-to-top-btn');
+    }
+}
 
+/**
+ *  hides "#scrollToTopBtn"
+ */
+function hideScrollToTop() {
+    if ($('#scrollToTopBtn').hasClass('show-scroll-to-top-btn')) {
+        $('#scrollToTopBtn').removeClass('show-scroll-to-top-btn');
+    }
+}
+
+/**
+ *  function for scrolling page to top
+ */
+function SrcollToTop() {
+    $("body,html").animate({scrollTop: $("body").offset().top - 50}, 500);
+}
+
+/**
+ *  jquery part begins
+ */
+$('document').ready(function() {
+    // uses jquery-elastic to increase the height of textarea automatically
+    $('.text-div').elastic();
+
+    // resize divs
+    $('.content-div').css('min-height', $(window).height() - 130 );
+    $('.text-div').css('min-height', $(window).height() - 160 );
+
+    //
+    $(window).scroll(function() {
+        var scroll = $(this).scrollTop();
+        if (50 < scroll) {
+            showScrollToTop();
+        } else {
+            hideScrollToTop();
+        }
+    });
+
+    // button for scroll to top
+    $('#scrollToTopBtn').click(function(event) {
+        event.preventDefault();
+        SrcollToTop();
+    });
+
+});
+
+/**
+ *  Angular part begins
+ */
 var markdownEditor = angular.module('markdownEditor', ['hc.marked'])
  .config(['markedProvider', function(markedProvider) {
 
@@ -34,6 +83,7 @@ var markdownEditor = angular.module('markdownEditor', ['hc.marked'])
 // main controller
 markdownEditor.controller('mainCtrl', ['$scope', 'marked', function($scope, marked) {
 
+    // default value
     $scope.showEditor = true;
     $scope.showViewer = false;
 
@@ -66,6 +116,7 @@ markdownEditor.controller('mainCtrl', ['$scope', 'marked', function($scope, mark
         $scope.showViewer = true;
     }
 
+    // when window size changes
     $(window).resize(function(){
         // resize divs
         $('.content-div').css('min-height', $(window).height() - 130 );
