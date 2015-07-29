@@ -131,6 +131,8 @@ markdownEditor.controller('mainCtrl', ['$scope', 'marked', function($scope, mark
         } else {
             if (!$scope.showInTwoCol) {
                 $scope.showInTwoCol = true;
+                $scope.showEditor = true;
+                $scope.showViewer = false;
             }
         }
         $scope.$apply();
