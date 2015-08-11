@@ -101,11 +101,6 @@ markdownEditor.controller('mainCtrl', ['$scope', 'marked', function($scope, mark
     // sets default value for textarea
     $scope.markdownSource = '';
 
-    // updates $scope.markdownDisplay if $scope.markdownSource changes
-    $scope.$watch('markdownSource', function() {
-        $scope.markdownDisplay = marked($scope.markdownSource);
-    });
-
     $scope.editorOn = function() {
         $scope.showEditor = true;
         $scope.showViewer = false;
