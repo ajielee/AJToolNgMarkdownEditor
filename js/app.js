@@ -66,7 +66,7 @@ var markdownEditor = angular.module('markdownEditor', ['hc.marked'])
 
      // configuration for angular-marked
      markedProvider.setOptions({
-         gfm: true,
+         gfm: false,
          tables: true,
          highlight: function (code) {
              return hljs.highlightAuto(code).value;
